@@ -1,0 +1,11 @@
+#directories
+target/
+/.classpath
+/.project
+
+#os files
+*.class
+
+#package files
+*.jar
+
