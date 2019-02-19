@@ -20,4 +20,8 @@
         <property name="dataSource" ref="dataSource"></property>
         <property name="configLocation" value="file:src/main/webapp/WEB-INF/spring/mybatis-config.xml"></property>
     </bean>
+    
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    	<property name="basePackage" value="com.board.www.dao.mapper"/>
+    </bean>
 </beans>

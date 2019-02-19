@@ -1,6 +1,7 @@
 package com.board.www;
 
 import java.sql.Connection;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -12,6 +13,9 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.board.www.dao.mapper.PostMapper;
+import com.board.www.dto.PostVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations= {
@@ -26,7 +30,20 @@ public class SettingTest {
 	@Autowired
 	SqlSessionFactory sqlSessionFactory;
 	
+	@Autowired
+	PostMapper postMapper;
+	
 	@Test
+	public void testMybatis() {
+		List<PostVO> postList = postMapper.selectPostList();
+		
+		for (PostVO postVO : postList) {
+			System.out.println(postVO);
+		}
+	}
+	
+	@Test
+	@Ignore
 	public void testDBConnection() {
 		testDataSource();
 		testSqlSessionFactoryAndSqlSession();
