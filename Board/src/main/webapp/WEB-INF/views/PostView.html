@@ -6,10 +6,37 @@
   <title>게시글 조회</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/view.css">
 </head>
 <body>
-  
+  <h1 class="text-center">{post.getTitle}</h1>
+  <div class="container">
+    <table class="table-striped table-striped table">
+      <tr>
+        <td>글 번호</td>
+        <td>count</td>
+      </tr>
+      <tr>
+        <td>제목</td>
+        <td>${post.getTitle}</td>
+      </tr>
+      <tr>
+        <td>작성자</td>
+        <td>${post.getName}</td>
+      </tr>
+      <tr>
+        <td>작성일</td>
+        <td>${post.getWriteDate}</td>
+      </tr>
+      <tr>
+        <td>작성자</td>
+        <td>${post.getViewCount}</td>
+      </tr>
+    </table>
+    <p class="pContents">
+      ${post.getContents}
+    </p>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
