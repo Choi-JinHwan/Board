@@ -66,7 +66,7 @@ public class SettingTest {
 		testSelectPostList();
 	}
 	
-	@Test //@Ignore
+	@Test @Ignore
 	public void testSelectPostList() {
 		System.out.println("Hello");
 		List<PostVO> postList = postMapper.selectPostList();

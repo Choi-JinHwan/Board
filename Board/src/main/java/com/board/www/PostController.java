@@ -13,7 +13,7 @@ public class PostController {
 	@RequestMapping("/PostList")
 	public String postListController(Model model) {
 		model.addAttribute("postList",postService.getPostList());
-		return "list";
+		return "PostList";
 	}
 
 }

@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>게시글 목록</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" media="screen" href="./css/list.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/list.css">
 </head>
 <body>
   <h1 class="text-center">게시판 목록입니다.</h1>
@@ -22,10 +25,10 @@
       <c:forEach var="post" items="${postList}">
         <tr class="tr_hover" style="cursor:pointer;" onclick="location='/PostView/${post.postId}'">
           <td>count</td>
-          <td class="text-center">${post.getTitle}</td>
-          <td>${post.getWriteDate}</td>
-          <td>${post.getName}</td>
-          <td>${post.getViewCount}</td>
+          <td class="text-center">${post.title}</td>
+          <td>${post.writeDate}</td>
+          <td>${post.name}</td>
+          <td>${post.viewCount}</td>
         </tr>
       </c:forEach>
     </table>
