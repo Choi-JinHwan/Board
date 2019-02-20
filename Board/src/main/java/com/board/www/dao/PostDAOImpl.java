@@ -38,6 +38,12 @@ public class PostDAOImpl implements PostDAO {
 		return postMapper.deletePost(postId);
 	}
 
+	@Override
+	public void updateViewCount(int postId) {
+		postMapper.updateViewCount(postId);
+		
+	}
+
 
 
 }

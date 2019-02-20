@@ -10,5 +10,6 @@ public interface PostService {
 	public PostVO getPost(int postId);
 	public boolean updatePost(PostVO post);
 	public boolean deletePost(int postId);
+	public void updateViewCount(int postId);
 
 }

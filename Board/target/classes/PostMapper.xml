@@ -7,7 +7,7 @@
     	name,
     	title,
     	contents,
-    	writeDate,
+    	date_format(writeDate, "%Y-%m-%d") AS "writeDate",
     	viewCount 
     FROM 
     	postTb, 
@@ -21,7 +21,7 @@
 		name,
 		title,
 		contents,
-		writeDate,
+		date_format(writeDate, "%Y-%m-%d") AS "writeDate",
 		viewCount
 	FROM
 		postTb,
@@ -57,6 +57,13 @@ UPDATE
 	postTb SET 
 	title =  #{title},
 	contents = #{contents} 
+WHERE postId=#{postId};
+</update>
+<!--view Count update -->
+<update id="updateViewCount" parameterType="int">
+UPDATE 
+	postTb SET 
+	viewCount = viewCount+1
 WHERE postId=#{postId};
 </update>
 </mapper>

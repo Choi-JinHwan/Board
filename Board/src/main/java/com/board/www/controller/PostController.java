@@ -19,8 +19,9 @@ public class PostController {
 		return "PostList";
 	}
 	@RequestMapping("/PostView/{postId}")
-	public String postViewController(@PathVariable String postId, Model model) {
-		model.addAttribute("post",postService.getPost(Integer.valueOf(postId)));
+	public String postViewController(@PathVariable int postId, Model model) {
+		model.addAttribute("post",postService.getPost(postId));
+		postService.updateViewCount(postId);
 		return "PostView";
 	}
 }

@@ -18,6 +18,6 @@ public interface PostMapper {
 	
 	//게시물 삭제
 	public boolean deletePost(int postId);
-	
+	public void updateViewCount(int postId);
 	
 }
