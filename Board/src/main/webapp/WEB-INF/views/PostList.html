@@ -20,7 +20,7 @@
         <th class="col-sm-2">조회수</th>
       </tr>
       <c:forEach var="post" items="${postList}">
-        <tr style="cursor:pointer;" onclick="location='/PostView/${post.postId}'">
+        <tr class="tr_hover" style="cursor:pointer;" onclick="location='/PostView/${post.postId}'">
           <td>count</td>
           <td class="text-center">${post.getTitle}</td>
           <td>${post.getWriteDate}</td>
