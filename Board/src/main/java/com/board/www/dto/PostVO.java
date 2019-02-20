@@ -3,6 +3,7 @@ package com.board.www.dto;
 public class PostVO {
 
 	private int postId;
+	private String name;
 	private String userLoginId;
 	private String title;
 	private String contents;
@@ -45,6 +46,22 @@ public class PostVO {
 	}
 	public void setViewCount(int viewCount) {
 		this.viewCount = viewCount;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "postId : "+postId
+				+"\nwriter name : "+name
+				+"\ntitle : "+title
+				+"\ncontents : "+contents
+				+"\nwriteDate : "+writeDate
+				+"\nviewCount : "+viewCount;
 	}
 	
 }

@@ -33,12 +33,69 @@ public class SettingTest {
 	@Autowired
 	PostMapper postMapper;
 	
-	@Test
-	public void testMybatis() {
+	@Test @Ignore
+	public void testDeleteMapper() {
+		selectPost(3);
+		postMapper.deletePost(3);
+		selectPost(3);
+	}
+	
+	@Test @Ignore
+	public void testUpdateMapper() {
+		PostVO post = new PostVO();
+		post.setPostId(3);
+		post.setTitle("수정된 타이틀");
+		post.setContents("수정된 내용");
+		boolean sucess = postMapper.updatePost(post);
+		System.out.println("sucess : "+sucess);
+		selectPost(3);
+		post.setTitle("타이틀");
+		post.setContents("내용");
+		sucess = postMapper.updatePost(post);
+		System.out.println("sucess : "+sucess);
+		selectPost(3);
+	}
+	@Test@Ignore
+	public void testInserMapper() {
+		PostVO post = new PostVO();
+		post.setUserLoginId("test");
+		post.setTitle("inser mapper test");
+		post.setContents("~~testContents~~");
+		boolean sucess = postMapper.insertPost(post);
+		System.out.println(sucess);
+		testSelectPostList();
+	}
+	
+	@Test //@Ignore
+	public void testSelectPostList() {
+		System.out.println("Hello");
 		List<PostVO> postList = postMapper.selectPostList();
-		
-		for (PostVO postVO : postList) {
-			System.out.println(postVO);
+		System.out.println("postList size : "+postList.size());
+		if(postList.size()>0) {
+			System.out.println("=========");
+			for (PostVO postVO : postList) {
+				System.out.println(postVO.toString());
+				System.out.println("===============");
+			}
+		}
+		else {
+			System.out.println("PostList Size < 0");
+			
+		}
+	} 
+	@Test @Ignore
+	public void testSelectPost() {
+		selectPost(3);
+	}
+	public void selectPost(int i) {
+
+		System.out.println("SELECT ~~~~ WHERE postId="+i+";");
+		PostVO post = postMapper.selectPost(i);
+		if(post!=null) {
+			System.out.println(post);
+			System.out.println("===============");
+		} else {
+			System.out.println("post IS NULL");
 		}
 	}
 	

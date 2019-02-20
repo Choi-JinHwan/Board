@@ -4,11 +4,59 @@
 <select id="selectPostList" resultType="Post">
     SELECT
     	postId,
-    	userLoginId,
+    	name,
     	title,
     	contents,
     	writeDate,
     	viewCount 
-    FROM PostTb;
+    FROM 
+    	postTb, 
+    	userTb
+    WHERE postTb.delDate IS NULL
+    AND   postTb.userLoginId = userTb.LoginId;
 </select>
+<select id="selectPost" parameterType="int" resultType="Post">
+	SELECT 
+		postId,
+		name,
+		title,
+		contents,
+		writeDate,
+		viewCount
+	FROM
+		postTb,
+		userTb
+	WHERE
+		postTb.postId = #{postId}
+	AND postTb.delDate IS NULL
+	AND postTb.userLoginId = userTb.LoginId;
+</select>
+
+<insert id="insertPost" parameterType="Post">
+INSERT INTO 
+	postTb (
+	userLoginId,
+	title,
+	contents
+	) 
+	VALUES(
+		#{userLoginId}, 
+		#{title}, 
+		#{contents} 
+	);
+</insert>
+<!-- delete Post -->
+<update id="deletePost" parameterType="int">
+UPDATE postTb 
+SET delDate = NOW() 
+WHERE postId=#{postId};
+</update>
+<!-- update Post -->
+<update id="updatePost" parameterType="Post">
+UPDATE 
+	postTb SET 
+	title =  #{title},
+	contents = #{contents} 
+WHERE postId=#{postId};
+</update>
 </mapper>
