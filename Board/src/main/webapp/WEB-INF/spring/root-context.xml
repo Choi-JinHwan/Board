@@ -9,7 +9,7 @@
 	<context:component-scan base-package="com.board.www"/>
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://127.0.0.1:3306/board?characterEncoding=UTF-8&amp;serverTimezone=UTC"/>
 		<property name="username" value="root"/>
 		<property name="password" value="root"/>
@@ -17,8 +17,8 @@
 	
 	<!-- mybatis SqlSessionFactoryBean -->
     <bean id="SqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"></property>
-        <property name="configLocation" value="file:src/main/webapp/WEB-INF/spring/mybatis-config.xml"></property>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="file:src/main/webapp/WEB-INF/spring/mybatis-config.xml"/>
     </bean>
     
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
