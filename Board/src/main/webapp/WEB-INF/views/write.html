@@ -5,20 +5,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap.css">
   <link rel="stylesheet" type="text/css" media="screen" href="./css/write.css">
   
 </head>
 <body>
-  <div id="wrap">
-    <form action="#" method="POST" id="submitForm">
-      <p>
-        <label for="title">제목</label>
-        <input type="text" name="title" id="title" placeholder="제목">
-      </p>
-      <p>
-        <textarea name="description" id="description" placeholder="내용을 작성해주세요."></textarea>
-      </p>
-      <input type="submit" value="작성완료" id="submit">
+  <div class="container">
+    <form action="#" method="POST" id="submitForm" class="form-horizontal">
+      <div class="form-group">
+        <label for="title" class="col-sm-1 control-label">제목</label>
+        <div class="col-sm-11">
+          <input type="text" name="title" id="title" class="form-control" placeholder="제목">
+        </div>
+      </div>
+      <div>
+        <textarea name="description" id="description" class="form-control" rows="3" placeholder="내용을 작성해주세요."></textarea>
+      </div>
+      <div class="btn_wrap">
+        <input type="submit" class="btn btn-success" value="작성완료" id="submit">
+      </div>
     </form>
   </div>
   <script src="./js/write.js"></script>

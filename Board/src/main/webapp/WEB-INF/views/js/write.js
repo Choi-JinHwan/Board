@@ -10,11 +10,13 @@ let checkForm = function(){
       alert("제목을 작성해주세요.");
       title.focus();
       e.preventDefault();
+      return false;
     }
     if (description.value == "") {
       alert("내용을 작성해주세요.");
       description.focus();
       e.preventDefault();
+      return false;
     } 
   });
 }

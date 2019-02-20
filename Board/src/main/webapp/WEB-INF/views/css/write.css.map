@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AASE,sBAAa,GACX,KAAK,EAAE,KAAK,EACZ,UAAU,EAAE,GAAG;AAVjB,eAAQ,GACN,OAAO,EAAE,KAAK,EACd,KAAK,EAAE,IAAI,EACX,OAAO,EAAE,EAAE",
+"sources": ["../scss/write.scss"],
+"names": [],
+"file": "write.css"
+}
