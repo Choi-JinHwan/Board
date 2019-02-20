@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/view.css">
 </head>
 <body>
-  <h1 class="text-center">{post.getTitle}</h1>
+  <h1 class="text-center">${post.title}</h1>
   <div class="container">
     <table class="table-striped table-striped table">
       <tr>
@@ -21,23 +21,23 @@
       </tr>
       <tr>
         <td>제목</td>
-        <td>${post.getTitle}</td>
+        <td>${post.title}</td>
       </tr>
       <tr>
         <td>작성자</td>
-        <td>${post.getName}</td>
+        <td>${post.name}</td>
       </tr>
       <tr>
         <td>작성일</td>
-        <td>${post.getWriteDate}</td>
+        <td>${post.writeDate}</td>
       </tr>
       <tr>
         <td>작성자</td>
-        <td>${post.getViewCount}</td>
+        <td>${post.viewCount}</td>
       </tr>
     </table>
     <p class="pContents">
-      ${post.getContents}
+      ${post.contents}
     </p>
   </div>
   <script src="main.js"></script>

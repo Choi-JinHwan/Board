@@ -1,4 +1,4 @@
-package com.board.www;
+package com.board.www.dao;
 
 import java.util.List;
 

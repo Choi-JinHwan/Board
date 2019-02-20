@@ -1,10 +1,11 @@
-package com.board.www;
+package com.board.www.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.board.www.dao.PostDAO;
 import com.board.www.dto.PostVO;
 
 @Service

@@ -15,7 +15,7 @@
 <body>
   <h1 class="text-center">게시판 글쓰기</h1>
   <div class="container">
-    <form action="#" method="POST" id="submitForm" class="form-horizontal">
+    <form action="/PostWriter" method="POST" id="submitForm" class="form-horizontal">
       <div class="form-group">
         <label for="title" class="col-sm-1 control-label">제목</label>
         <div class="col-sm-11">

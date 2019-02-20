@@ -1,9 +1,12 @@
-package com.board.www;
+package com.board.www.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.board.www.service.PostService;
 
 @Controller
 public class PostController {
@@ -15,5 +18,9 @@ public class PostController {
 		model.addAttribute("postList",postService.getPostList());
 		return "PostList";
 	}
-
+	@RequestMapping("/PostView/{postId}")
+	public String postViewController(@PathVariable String postId, Model model) {
+		model.addAttribute("post",postService.getPost(Integer.valueOf(postId)));
+		return "PostView";
+	}
 }
