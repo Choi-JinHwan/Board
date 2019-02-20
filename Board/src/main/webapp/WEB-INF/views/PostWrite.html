@@ -3,21 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>게시글 작성</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="./css/bootstrap.css">
   <link rel="stylesheet" type="text/css" media="screen" href="./css/write.css">
   
 </head>
 <body>
+  <h1 class="text-center">게시판 글쓰기</h1>
   <div class="container">
     <form action="#" method="POST" id="submitForm" class="form-horizontal">
       <div class="form-group">
         <label for="title" class="col-sm-1 control-label">제목</label>
         <div class="col-sm-11">
-          <input type="text" name="title" id="title" class="form-control" placeholder="제목">
+          <input type="text" name="title" id="title" class="form-control" placeholder="제목을 작성해주세요.">
         </div>
       </div>
+      <div class="form-group">
+          <label for="name" class="col-sm-1 control-label">이름</label>
+          <div class="col-sm-11">
+            <input type="text" name="name" id="name" class="form-control" placeholder="이름을 작성해주세요.">
+          </div>
+        </div>
       <div>
         <textarea name="description" id="description" class="form-control" rows="3" placeholder="내용을 작성해주세요."></textarea>
       </div>
