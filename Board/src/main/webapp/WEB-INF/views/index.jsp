@@ -21,13 +21,13 @@
   </div>
 
   <script>
-  let backImg     = document.querySelector("#backImg");
-  let randomNum   = Math.floor(Math.random() * 3) + 1;
-  backImg.style.backgroundImage = "url('/resources/images/mainback" + randomNum + ".jpg')";
+    let backImg     = document.querySelector("#backImg");
+    let randomNum   = Math.floor(Math.random() * 3) + 1;
+    backImg.style.backgroundImage = "url('/resources/images/mainback" + randomNum + ".jpg')";
 
-  let topMenu = document.querySelector("#topMenu");
-  topMenu.classList.remove("navbar-static-top");
-  topMenu.classList.add("navbar-fixed-top");
+    let topMenu = document.querySelector("#topMenu");
+    topMenu.classList.remove("navbar-static-top");
+    topMenu.classList.add("navbar-fixed-top");
   </script>
 </body>
 </html>
