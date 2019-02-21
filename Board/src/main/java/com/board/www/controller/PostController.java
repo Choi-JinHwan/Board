@@ -40,6 +40,7 @@ public class PostController {
 		return "PostUpdate";
 	}
 	
+	//게시물 수정
 	@RequestMapping("/PostUpdate")
 	public String postUpdate(
 			Model model, 
@@ -56,5 +57,25 @@ public class PostController {
 		
 		return "PostList";
 		
+	}
+	
+	//게시물 작성
+	@RequestMapping("/PostWrite")
+	public String postWrite() {
+		return "postWrite";
+	}
+	
+	@RequestMapping("/PostWriter")
+	public String postWriter(
+			@RequestParam String title,
+			@RequestParam String contents
+			) {
+		PostVO tempPost = new PostVO();
+		tempPost.setTitle(title);
+		tempPost.setContents(contents);
+		
+		//추후 회원시스템 추가 후 변경예정
+		tempPost.setUserLoginId("test");
+		return "PostList";
 	}
 }
