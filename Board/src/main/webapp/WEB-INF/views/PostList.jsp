@@ -18,20 +18,25 @@
       <tr>
         <th>#</th>
         <th class="col-sm-10 text-center">제목</th>
-        <th class="col-sm-2">작성일</th>
-        <th class="col-sm-2">작성자</th>
-        <th class="col-sm-2">조회수</th>
+        <th class="col-sm-2 text-center">작성일</th>
+        <th class="col-sm-2 text-center">작성자</th>
+        <th class="col-sm-2 text-center">조회수</th>
+        <th class="col-sm-3 text-center">수정</th>
       </tr>
       <c:forEach var="post" items="${postList}">
-        <tr class="tr_hover" style="cursor:pointer;" onclick="location='/PostView/${post.postId}'">
-          <td>count</td>
-          <td class="text-center">${post.title}</td>
-          <td>${post.writeDate}</td>
-          <td>${post.name}</td>
-          <td>${post.viewCount}</td>
+        <tr id="linkTable" class="tr_hover" style="cursor:pointer;">
+          <td class="text-center linkTd"><span>count</span></td>
+          <td class="text-center linkTd"><span>${post.title}</span></td>
+          <td class="text-center linkTd"><span>${post.writeDate}</span></td>
+          <td class="text-center linkTd"><span>${post.name}</span></td>
+          <td class="text-center linkTd"><span>${post.viewCount}</span></td>
+          <td>
+            <button type="button" class="submitBtn" onclick="location.href='/PostUpdate/${post.postId}';">수정</button>
+          </td>
         </tr>
       </c:forEach>
     </table>
   </div>
+  <script src="/resources/js/list.js"></script>
 </body>
 </html>
