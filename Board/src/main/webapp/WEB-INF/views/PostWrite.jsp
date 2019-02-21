@@ -15,6 +15,7 @@
 <body>
   <c:import url="menu.jsp"></c:import>
   
+  
   <div class="container">
     <h1 class="text-center">게시판 글쓰기</h1>
     <form action="/PostWriter" method="POST" id="submitForm" class="form-horizontal">
