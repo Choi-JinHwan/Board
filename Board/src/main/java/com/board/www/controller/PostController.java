@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.www.dto.PostVO;
@@ -15,6 +16,13 @@ public class PostController {
 	@Autowired
 	PostService postService;
 	
+	
+	//게시물 삭제
+		@RequestMapping("/index")
+		public String index() {
+			return "index";
+		}
+		
 	//게시물 목록 조회
 	@RequestMapping("/PostList")
 	public String postListController(Model model) {
@@ -41,7 +49,7 @@ public class PostController {
 	}
 	
 	//게시물 수정
-	@RequestMapping("/PostUpdate")
+	@RequestMapping(value="/PostUpdate", method=RequestMethod.POST)
 	public String postUpdate(
 			Model model, 
 			@RequestParam String title, 
@@ -62,7 +70,7 @@ public class PostController {
 	//게시물 작성
 	@RequestMapping("/PostWrite")
 	public String postWrite() {
-		return "postWrite";
+		return "PostWrite";
 	}
 	
 	@RequestMapping("/PostWriter")
@@ -76,6 +84,13 @@ public class PostController {
 		
 		//추후 회원시스템 추가 후 변경예정
 		tempPost.setUserLoginId("test");
+		return "PostList";
+	}
+	
+	//게시물 삭제
+	@RequestMapping("/PostDelete/{postId}")
+	public String postDelete(@PathVariable String postId) {
+		postService.deletePost(Integer.valueOf(postId));
 		return "PostList";
 	}
 }

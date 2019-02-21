@@ -31,7 +31,7 @@
           </div>
         </div>
       <div>
-        <textarea name="description" id="description" class="form-control" rows="3" placeholder="내용을 작성해주세요."></textarea>
+        <textarea name="contents" id="description" class="form-control" rows="3" placeholder="내용을 작성해주세요."></textarea>
       </div>
       <div class="btn_wrap">
         <input type="submit" class="btn btn-success" value="작성완료" id="submit">

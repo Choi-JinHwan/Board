@@ -27,11 +27,11 @@
       </tr>
       <c:forEach var="post" items="${postList}">
         <tr id="linkTable" class="tr_hover" style="cursor:pointer;">
-          <td class="text-center linkTd"><span>count</span></td>
-          <td class="text-center linkTd"><span>${post.title}</span></td>
-          <td class="text-center linkTd"><span>${post.writeDate}</span></td>
-          <td class="text-center linkTd"><span>${post.name}</span></td>
-          <td class="text-center linkTd"><span>${post.viewCount}</span></td>
+          <td class="text-center linkTd"><span onclick="location.href='/PostView/${post.postId}';">count</span></td>
+          <td class="text-center linkTd"><span onclick="location.href='/PostView/${post.postId}';">${post.title}</span></td>
+          <td class="text-center linkTd"><span onclick="location.href='/PostView/${post.postId}';">${post.writeDate}</span></td>
+          <td class="text-center linkTd"><span onclick="location.href='/PostView/${post.postId}';">${post.name}</span></td>
+          <td class="text-center linkTd"><span onclick="location.href='/PostView/${post.postId}';">${post.viewCount}</span></td>
           <td>
             <button type="button" class="submitBtn" onclick="location.href='/PostUpdate/${post.postId}';">수정</button>
           </td>
@@ -39,16 +39,5 @@
       </c:forEach>
     </table>
   </div>
-  <script>
-  let span = document.querySelectorAll(".linkTd > span");
-  let locaFunc = function () {
-    location.href = '/PostView/${post.postId}';
-  }
-
-  for (let i = 0; i < span.length; i++) {
-    span[i].addEventListener("click", locaFunc);  
-  }
-
-  </script>
 </body>
 </html>
