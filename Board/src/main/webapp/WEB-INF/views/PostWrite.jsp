@@ -13,8 +13,10 @@
   
 </head>
 <body>
-  <h1 class="text-center">게시판 글쓰기</h1>
+  <c:import url="menu.jsp"></c:import>
+  
   <div class="container">
+    <h1 class="text-center">게시판 글쓰기</h1>
     <form action="/PostWriter" method="POST" id="submitForm" class="form-horizontal">
       <div class="form-group">
         <label for="title" class="col-sm-1 control-label">제목</label>
@@ -36,6 +38,6 @@
       </div>
     </form>
   </div>
-  <script src="./js/write.js"></script>
+  <script src="/resources/js/write.js"></script>
 </body>
 </html>

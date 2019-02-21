@@ -12,8 +12,10 @@
   <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/list.css">
 </head>
 <body>
-  <h1 class="text-center">게시판 목록입니다.</h1>
+  <c:import url="menu.jsp"></c:import>
+  
   <div class="container">
+    <h1 class="text-center">게시판 목록입니다.</h1>
     <table class="table table-striped table-bordered">
       <tr>
         <th>#</th>
@@ -37,6 +39,16 @@
       </c:forEach>
     </table>
   </div>
-  <script src="/resources/js/list.js"></script>
+  <script>
+  let span = document.querySelectorAll(".linkTd > span");
+  let locaFunc = function () {
+    location.href = '/PostView/${post.postId}';
+  }
+
+  for (let i = 0; i < span.length; i++) {
+    span[i].addEventListener("click", locaFunc);  
+  }
+
+  </script>
 </body>
 </html>

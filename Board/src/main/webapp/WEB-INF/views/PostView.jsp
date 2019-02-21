@@ -12,8 +12,10 @@
   <link rel="stylesheet" type="text/css" media="screen" href="/resources/css/view.css">
 </head>
 <body>
-  <h1 class="text-center">${post.title}</h1>
+  <c:import url="menu.jsp"></c:import>
+  
   <div class="container">
+    <h1 class="text-center">${post.title}</h1>
     <table class="table-striped table-striped table">
       <tr>
         <td>글 번호</td>
